@@ -1,0 +1,42 @@
+*** FILE INCLUSION ***
+
+|| PATH TRAVERSAL
+file_get_contents  = most common vulnerabilities in php
+
+|| Local File Inclusion - LFI
+include, require, include_once and require_once contribute to vulnerable web app.
+
+
+|| REMOTE FILE INCLUSION - RFI
+
+One requirement for RFI is that the allow_url_fopen option needs to be on.
+
+SUCCESSFUL RFI ATTACK:
+- Sensitive Information Disclosure
+- Cross-site Scripting(XSS)
+- Denial of Serviec (DoS)
+
+RFI STEPS
+- creating a php file that execute command in the target url without input validation
+
+
+***** REMEDIATION ****
+As a developer
+
+- Keep system and services, including web application frameworks, updated with the latest version.
+- Turn off PHP errors to avoid leaking the path of the application and other potentially revealing information.
+- A Web Application Firewall (WAF) is a good option to help mitigate web application attacks.
+- Disable some PHP features that cause file inclusion vulnerabilities if your web app doesn't need them, such as allow_url_fopen on and allow_url_include.
+- Carefully analyze the web application and allow only protocols and PHP wrappers that are in need.
+- Never trust user input, and make sure to implement proper input validation against file inclusion.
+- Implement whitelisting for file names and locations as well as blacklisting.
+
+
+Steps for testing for LFI
+1. Find an entry point that could be via GET, POST, COOKIE, or HTTP header values!
+2. Enter a valid input to see how the web server behaves.
+3. Enter invalid inputs, including special characters and common file names.
+4. Don't always trust what you supply in input forms is what you intended! Use either a browser address bar or a tool such as Burpsuite.
+5. Look for errors while entering invalid input to disclose the current path of the web application; if there are no errors, then trial and error might be your best option.
+6. Understand the input validation and if there are any filters!
+7. Try the inject a valid entry to read sensitive files
