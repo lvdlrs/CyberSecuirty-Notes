@@ -1,2 +1,2 @@
 # CyberSecuirty-Notes
-Notes for cybersecurity
+Notes for cybersecurity learning path
