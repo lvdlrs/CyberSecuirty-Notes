@@ -1,0 +1,48 @@
+*** How to test for Reflected XSS: ***
+
+You'll need to test every possible point of entry; these include:
+
+- Parameters in the URL Query String
+- URL File Path
+- Sometimes HTTP Headers (although unlikely exploitable in practice)
+
+
+*** STORED XSS ***
+
+How to test for Stored XSS:
+
+You'll need to test every possible point of entry where it seems data is stored and then shown back in areas that other users have access to; a small example of these could be:
+
+- Comments on a blog
+- User profile information
+- Website Listings
+
+*** DOM Based XSS ***
+
+How to test for Dom Based XSS:
+
+DOM Based XSS can be challenging to test for and requires a certain amount of knowledge of JavaScript to read the source code. You'd need to look for parts of the code that access certain variables that an attacker can have control over, such as "window.location.x" parameters.
+
+When you've found those bits of code, you'd then need to see how they are handled and whether the values are ever written to the web page's DOM or passed to unsafe JavaScript methods such as eval().
+
+eval() javascript unsafe method
+window.location.x = need to look for this code in JS
+
+
+*** BLIND XSS ***
+
+How to test for blind XSS
+When testing for Blind XSS vulnerabilities, you need to ensure your payload has a call back (usually an HTTP request). This way, you know if and when your code is being executed.
+
+https://xsshunter.com/ - use to blind XSS attacks
+
+
+***** Polyglots *****
+- is a string of text which can escape attributes, tags and bypass filters all in onerror
+
+sample:
+jaVasCript:/*-/*`/*\`/*'/*"/**/(/* */onerror=alert('THM') )//%0D%0A%0d%0a//</stYle/</titLe/</teXtarEa/</scRipt/--!>\x3csVg/<sVg/oNloAd=alert('THM')//>\x3e
+
+
+*** listening to server using netcart
+nc -nlvp [port]
