@@ -1,0 +1,15 @@
+**** SSRF ****
+SSRF (Server-side Request Forgery)
+
+2 types of SSRF
+- regular SSRF where data is returned to the attacker's screen
+- Blind SSRF vulnerability where an SSRF occurs, but no information is returned to the attacker's screen.
+
+*** BLIND SSRF TOOL ***
+requestbin.com
+own HTTP server
+Burpsuite's Collaborator client
+
+
+** || note in cloud environment || **
+169.254.169.254 - need to block access to mention IP address / deployed cloud server
