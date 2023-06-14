@@ -1,0 +1,28 @@
+*** DETECTING BLIND COMMAND INJECTION ***
+
+ping and sleep use for payload to test
+
+curl = command is a great way to test for command injection. This is because you are able to use curl to deliver data to and from an application in your payload. Take this code snippet below as an example, a simple curl payload to an application is possible for command injection.
+
+*** DETECTING VERBOSE COMMAND INJECTION ***
+ping or whoami
+
+==== Linux ====
+whoami = See what user the application is running under.
+ls = list contents of current directory
+ping = This command will invoke the application to hang. This will be useful in testing an application for blind command injection.
+sleep = This is another useful payload in testing an application for blind command injection, where the machine does not have ping installed.
+nc = Netcat can be used to spawn a reverse shell onto the vulnerable application. You can use this foothold to navigate around the target machine for other services, files, or potential means of escalating privileges.
+
+==== WINDOWS ====
+whoami = The same functionality that we see on linux with 'whoami' exists here
+dir = List the contents of the current directory. You may be able to find files such as configuration files, environment files (tokens and application keys), and many more valuable things.
+ping = This command will invoke the application to hang. This will be useful in testing an application for blind command injection.
+timeout = This command will also invoke the application to hang. It is also useful for testing an application for blind command injection if the ping command is not installed.
+
+
+**** BYPASSING FILTERS ****
+use the hexadecimal value of this to achieve the same result.
+
+Cheat Sheet
+https://github.com/payloadbox/command-injection-payload-list
