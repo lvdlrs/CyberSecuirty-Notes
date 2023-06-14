@@ -16,5 +16,21 @@ mv = move a file or folder
 rm = remove a file or folder (adding -R switch will remove directory)
 file = determine the type of file
 
+**** PERMISSION *****
 su = to switch user
 -l = combine with su to switch user and logged in
+
+**** TERMINAL TEXT EDITOR *****
+nano filename = use to create / edit file
+
+**** DOWNLOADING FILES *****
+wget = use download from a source url
+
+
+**** PROCESSES *****
+systemctl = use to interact with systemd process/daemon
+Four options with systemctl:
+- start
+- stop
+- enable
+- disable
