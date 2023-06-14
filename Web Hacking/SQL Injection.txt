@@ -1,0 +1,5 @@
+**** SQL ****
+select = use to retrieve data from database
+union = use to combine to more select statements
+update = use to update one or more rows of data within the table
+delete = use to delete one or more rows of data within the table
