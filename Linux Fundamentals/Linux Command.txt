@@ -1,0 +1,20 @@
+& - This operator allows you to run commands in the background of your terminal.
+&& - This operator allows you to combine multiple commands together in one line of your terminal.
+> - This operator is a redirector - meaning that we can take the output from a command (such as using cat to output a file) and direct it elsewhere.
+>> This operator does the same function of the > operator but appends the output rather than replacing (meaning nothing is overwritten).
+
+
+ls = list item inside a folder
+man = use to view manual about specific command
+
+
+**** FILE SYSTEM INTERACTION *****
+touch = create file
+mkdir = create a folder
+cp = copy a file or folder
+mv = move a file or folder
+rm = remove a file or folder (adding -R switch will remove directory)
+file = determine the type of file
+
+su = to switch user
+-l = combine with su to switch user and logged in
