@@ -45,4 +45,5 @@ curl -H "Cookie: logged_in=true, admin=true" http://10.10.59.148/cookie-test
 helpful link for cracking: https://crackstation.net/
 
 ** Encoding
-base64decode.org  = DECODING/ENCODING BASE64
+base64decode.org  = DECODING BASE64
+base64encode.org  = ENCODING BASE64
