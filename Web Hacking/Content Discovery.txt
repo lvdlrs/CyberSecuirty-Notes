@@ -1,0 +1,40 @@
+**** CONTENT DISCOVERY ****
+Manual using the following
+- robots.txt
+- favicon
+- sitemap.xml
+- http header
+- framework stack
+
+OSINT(OPEN SOURCE INTELLIGENCE )
+Google Hacking / Dorking
+reference: https://en.wikipedia.org/wiki/Google_hacking
+
+- site:url = returns results only from the specified website address
+- inurl: = returns results that have the specified word in the URL
+- filetype: = returns results which are a particular file extension
+- intitle: = return results that contain the specified word in the title
+
+
+WAPPALYZER
+https://www.wappalyzer.com/
+- is an online tool and browser extension that helps identify what technologies a website uses, such as frameworks, Content Management Systems (CMS), payment processors and much more, and it can even find version numbers as well.
+
+Wayback Machine
+- archive of websites
+
+
+*** AUTOMATED DISCOVERY ***
+WORDLISTS:
+https://github.com/danielmiessler/SecLists
+
+using ffuf:
+ffuf -w [address of the file text to search / wordlists] -u [url/ip]
+
+using dirb:
+dirb [url/ip] [address of the file text to search / wordlists]
+
+using gobuster:
+gobuster dir --url [url/ip] -w [address of the file text to search / wordlists]
+
+

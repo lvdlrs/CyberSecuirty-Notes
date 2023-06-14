@@ -1,0 +1,24 @@
+|=== 3 DIFFERENT TYPE OF SUBDOMAIN ENUMERATION ===|
+1. Brute Force
+2. OSINT(Open-source Intelligence)
+3. Virtual Host
+
+
+** OSINT - SSL/TLS CERTIFICATES
+crt.sh - to check domain logged
+
+** OSINT - SEARCH ENGINE
+-site:[url/domain]  site:*[url/domain] - show related subdomains for the specified url in google
+
+** AUTOMATION USING SUBLIST3R
+https://github.com/aboul3la/Sublist3r
+- Sublist3r is a python tool designed to enumerate subdomains of websites using OSINT
+
+** VIRTUAL HOSTS
+ffuf -w [address/WORDLISTS] -H "Host: [subdomain]" -u [URL/IP]
+-w = specifiy the wordlists to use
+-H = switch add/edits a header
+-u = argument specifies the url we are going to request
+
+ffuf -w [address/WORDLISTS] -H "Host: [subdomain]" -u [URL/IP] -fs {size}
+-fs = switch to use to filter page size result (e.g -fs {size} )

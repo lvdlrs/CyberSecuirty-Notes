@@ -1,0 +1,2 @@
+https://github.com/ffuf/ffuf
+https://github.com/danielmiessler/SecLists
