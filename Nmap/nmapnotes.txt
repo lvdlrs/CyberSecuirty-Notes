@@ -33,3 +33,7 @@ nmap -p 80 --script http-put --script-args http-put.url='/dav/shell.php',http-pu
 
 
 nmap --script-help <script-name> = use to access nmap script help
+
+grep = use to search within directory
+
+-Pn = tells the nmap to not bother pingin the host before scanning it
