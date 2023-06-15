@@ -1,0 +1,8 @@
+
+-sT = TCP Scans
+-sS = SYN "Half-open" Scans (need sudo permission to scan)
+-sU = UDP Scans
+
+-sN = TCP null scan
+-sF = TCP FIN Scans
+-sX = TCP Xmas Scan
