@@ -1,8 +1,35 @@
 
 -sT = TCP Scans
 -sS = SYN "Half-open" Scans (need sudo permission to scan)
--sU = UDP Scans
+-sU = UDP Scans (open|filtered port with no response adding --top-ports <number> will scan top ports)
 
 -sN = TCP null scan
 -sF = TCP FIN Scans
 -sX = TCP Xmas Scan
+
+-sn = use for ping sweep
+e.g = nmap -sn 192.168.0.1-254
+      nmap -sn 192.168.0.0/24
+
+The CIDR notation for a Class B network with a default netmask is /16
+
+*** NMAP SCRIPTING ENGINE ***
+https://nmap.org/book/nse-usage.html
+
+safe:- Won't affect the target
+intrusive:- Not safe: likely to affect the target
+vuln:- Scan for vulnerabilities
+exploit:- Attempt to exploit a vulnerability
+auth:- Attempt to bypass authentication for running services (e.g. Log into an FTP server anonymously)
+brute:- Attempt to bruteforce credentials for running services
+discovery:- Attempt to query running services for further information about the network (e.g. query an SNMP server).
+
+
+--script=<script-name> = use to run specific script
+--script-args =use to run script with require arguments
+
+e.g.
+nmap -p 80 --script http-put --script-args http-put.url='/dav/shell.php',http-put.file='./shell.php'
+
+
+nmap --script-help <script-name> = use to access nmap script help
