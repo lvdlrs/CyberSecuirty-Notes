@@ -1,3 +1,5 @@
+-F = use to scan top 100 ports
+
 
 -sT = TCP Scans
 -sS = SYN "Half-open" Scans (need sudo permission to scan)
